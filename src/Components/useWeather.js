@@ -6,7 +6,7 @@ export const useWeather = (location) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API_KEY = "95b7b59ec96f6ab8981f1f043b8db737";
+  const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
   useEffect(() => {
     const fetchWeather = async () => {
