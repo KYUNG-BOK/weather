@@ -74,7 +74,7 @@ npm run dev
 ---
 
 ## 스크린 샷
-![image](https://github.com/user-attachments/assets/16003617-2481-4619-bc8c-3cb3a6779108)
+![image](./images/weather.JPG)
 
 
 ---
