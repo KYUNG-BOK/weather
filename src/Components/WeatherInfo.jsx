@@ -40,9 +40,10 @@ export default function WeatherInfo({ weatherData, error, loading }) {
   if (!weatherData?.list?.length) return <SubTitle>날씨 데이터를 불러올 수 없습니다.</SubTitle>;
 
   // 안전하게 필터링
-  const dailyForecasts = weatherData.list.filter((item) =>
-    item.dt_txt.includes("12:00:00")
-  );
+  const dailyForecasts = weatherData.list.filter(item => {
+    const date = new Date(item.dt * 1000);
+    return date.getHours() === 12;
+  });
 
   return (
     <>
