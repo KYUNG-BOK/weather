@@ -53,7 +53,7 @@ const fetchKakaoAddress = async (lat, lon) => {
 };
 
 export default function Home() {
-  const dummyLocation = { lat: 36.9079, lon: 127.1817 };
+  const dummyLocation = { lat: 36.9079, lon: 127.1817 };  // 위치못불러오면 성환으로.
   const [location, setLocation] = useState(dummyLocation);
   const [address, setAddress] = useState("");
   const { weatherData, error, loading } = useWeather(location);

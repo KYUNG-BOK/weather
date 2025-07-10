@@ -39,11 +39,16 @@ export default function WeatherInfo({ weatherData, error, loading }) {
   if (error) return <ErrorMsg>{error}</ErrorMsg>;
   if (!weatherData?.list?.length) return <SubTitle>날씨 데이터를 불러올 수 없습니다.</SubTitle>;
 
+  // 안전하게 필터링
+  const dailyForecasts = weatherData.list.filter((item) =>
+    item.dt_txt.includes("12:00:00")
+  );
+
   return (
     <>
-      <SubTitle>최근 날씨</SubTitle>
+      <SubTitle> 정오 기준 날씨</SubTitle>
       <WeatherList>
-        {weatherData.list.slice(0, 5).map((item) => {
+        {dailyForecasts.slice(0, 5).map((item) => {
           const date = new Date(item.dt * 1000);
           const formattedDate =
             date.toLocaleDateString("ko-KR", {
@@ -71,3 +76,4 @@ export default function WeatherInfo({ weatherData, error, loading }) {
     </>
   );
 }
+
