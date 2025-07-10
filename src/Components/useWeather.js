@@ -21,6 +21,7 @@ export const useWeather = (location) => {
             lang: "ko",
           },
         });
+       console.log("API 응답 데이터:", res.data);     
         setWeatherData(res.data);
         setError(null);
       } catch (e) {
