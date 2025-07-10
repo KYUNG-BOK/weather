@@ -91,6 +91,6 @@ npm run dev
 
 ## 👤 Author
 
-- **코코 (KYUNG-BOK)**  
+- **복**  
 - GitHub: [github.com/KYUNG-BOK](https://github.com/KYUNG-BOK)  
 - Velog: [velog.io/@your-id](https://velog.io/@yoonddubi)
