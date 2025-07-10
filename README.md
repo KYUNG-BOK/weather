@@ -74,7 +74,8 @@ npm run dev
 ---
 
 ## 스크린 샷
-![image](./images/weather.JPG)
+
+<img width="635" height="962" alt="KakaoTalk_Photo_2025-07-10-19-30-43" src="https://github.com/user-attachments/assets/f8d1af3d-d47b-441f-a9ae-a8516b8a8701" />
 
 
 ---
