@@ -99,4 +99,3 @@ npm run dev
 
 - **복**  
 - GitHub: [github.com/KYUNG-BOK](https://github.com/KYUNG-BOK)  
-- Velog: [velog.io/@your-id](https://velog.io/@yoonddubi)
