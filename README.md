@@ -8,7 +8,7 @@
 
 ## 🚀 데모
 
-👉 [실행 링크 보기](weather-vert-two-35.vercel.app/)
+👉 [실행 하기](weather-vert-two-35.vercel.app/)
 
 ---
 
@@ -70,6 +70,12 @@ cd weather-app
 npm install
 npm run dev
 ```
+
+---
+
+## 스크린 샷
+![image](https://github.com/user-attachments/assets/16003617-2481-4619-bc8c-3cb3a6779108)
+
 
 ---
 
