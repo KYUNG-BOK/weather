@@ -3,6 +3,8 @@ import styled from "styled-components";
 import LocationDisplay from "../Components/LocationDisplay";
 import WeatherInfo from "../Components/WeatherInfo";
 import { useWeather } from "../Components/useWeather";
+import axios from "axios";
+
 
 const Container = styled.div`
   max-width: 600px;
@@ -38,18 +40,25 @@ const Title = styled.h1`
 
 // 주소 변환 함수
 const fetchKakaoAddress = async (lat, lon) => {
-  const res = await fetch(
-    `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${lon}&y=${lat}`,
-    {
-      headers: {
-        Authorization: `KakaoAK ${import.meta.env.VITE_KAKAO_API_KEY}`,
-      },
-    }
-  );
-  const data = await res.json();
-  const roadAddress = data?.documents?.[0]?.road_address?.address_name;
-  const jibunAddress = data?.documents?.[0]?.address?.address_name;
-  return roadAddress || jibunAddress || "주소 확인 불가";
+  try {
+    const res = await axios.get(
+      `https://dapi.kakao.com/v2/local/geo/coord2address.json?x=${lon}&y=${lat}`,
+      {
+        headers: {
+          Authorization: `KakaoAK ${import.meta.env.VITE_KAKAO_API_KEY}`,
+        },
+      }
+    );
+
+    const data = res.data;
+    const roadAddress = data?.documents?.[0]?.road_address?.address_name;
+    const jibunAddress = data?.documents?.[0]?.address?.address_name;
+
+    return roadAddress || jibunAddress || "주소 확인 불가";
+  } catch (err) {
+    console.error("주소 요청 실패:", err);
+    return "주소 확인 실패";
+  }
 };
 
 export default function Home() {
