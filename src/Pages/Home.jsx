@@ -53,7 +53,7 @@ const fetchKakaoAddress = async (lat, lon) => {
 };
 
 export default function Home() {
-  const dummyLocation = { lat: 36.9079, lon: 127.1817 };  // 위치못불러오면 성환으로.
+  const dummyLocation = { lat: 36.8156, lon: 127.1131 };  // 위치못불러오면 천안시청으로.
   const [location, setLocation] = useState(dummyLocation);
   const [address, setAddress] = useState("");
   const { weatherData, error, loading } = useWeather(location);
@@ -65,7 +65,7 @@ export default function Home() {
         setLocation({ lat: latitude, lon: longitude });
       },
       () => {
-        alert("위치 정보를 가져올 수 없습니다. 기본 위치(천안시 성환읍)를 사용합니다.");
+        alert("위치 정보를 가져올 수 없습니다. 기본 위치(천안시청)를 사용합니다.");
         setLocation(dummyLocation);
       }
     );
