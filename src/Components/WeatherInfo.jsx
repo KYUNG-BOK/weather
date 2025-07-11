@@ -47,7 +47,7 @@ export default function WeatherInfo({ weatherData, error, loading }) {
 
   return (
     <>
-      <SubTitle> 정오 기준 날씨</SubTitle>
+      <SubTitle> 기상 예보 </SubTitle>
       <WeatherList>
         {dailyForecasts.slice(0, 5).map((item) => {
           const date = new Date(item.dt * 1000);
